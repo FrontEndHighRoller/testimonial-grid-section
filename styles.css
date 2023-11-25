@@ -1,0 +1,228 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 0.81rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--Light-grayish-blue);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* COLOURS END....................................................................................................*/
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/* COLOURS FINISH....................................................................................................*/
+
+/* TYPOGRAPHY ....................................................................................................*/
+.image_name_status img {
+  border-radius: 50%;
+  height: 35px;
+}
+
+.name {
+  color: var(--Light-gray);
+}
+
+.status {
+  color: var(--Light-gray);
+  opacity: 50%;
+}
+
+.container h2 {
+  color: var(--White);
+}
+
+.container p {
+  color: var(--Light-gray);
+  opacity: 70%;
+}
+
+.container_3 h2,
+.container_5 h2 {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.container_3 p,
+.container_5 p {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.container:nth-child(3) h4,
+.container:nth-child(5) h4 {
+  color: var(--Very-dark-blackish-blue);
+}
+
+/* TYPOGRAPHY ....................................................................................................*/
+
+/* containers colours */
+
+.container_1 {
+  background: var(--Moderate-violet) url(images/bg-pattern-quotation.svg) right
+    20px top 0 no-repeat;
+  grid-area: one;
+}
+
+.container_2 {
+  background-color: var(--Very-dark-grayish-blue);
+  grid-area: two;
+}
+
+.container_3 {
+  background-color: var(--White);
+  grid-area: three;
+}
+
+.container_4 {
+  background-color: var(--Very-dark-blackish-blue);
+  grid-area: four;
+}
+
+.container_5 {
+  background-color: var(--White);
+  grid-area: five;
+}
+
+/* containers colours */
+
+.main_container {
+  display: grid;
+  gap: 20px;
+  margin: 60px 20px;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+}
+
+.container {
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+.image_name_status {
+  display: flex;
+  align-items: center;
+}
+
+.name,
+.status {
+  margin: 0;
+  margin-left: 10px;
+  line-height: 1.5;
+}
+
+@media (min-width: 50rem) {
+  .main_container {
+    grid-template-areas:
+      "one two"
+      "one three"
+      "four three"
+      "four five";
+  }
+}
+
+@media (min-width: 80rem) {
+  .main_container {
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    margin: 100px;
+  }
+}
