@@ -39,7 +39,6 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   background-color: var(--Light-grayish-blue);
-  overflow: hidden;
   /* display: flex;
   justify-content: center;
   align-items: center; */
